@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bw-black text-bw-white font-montserrat overflow-x-hidden;
+  }
+  * {
+    @apply border-bw-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-anton uppercase font-bold text-bw-white;
+    letter-spacing: 0.04em;
+  }
+}
+
+@layer components {
+  .bw-button {
+    @apply px-8 py-3 bg-bw-black border-2 border-bw-white text-bw-white font-bold uppercase tracking-wider transition-all duration-200 hover:border-bw-accent hover:text-bw-accent focus:outline-none focus:ring-2 focus:ring-bw-accent rounded-md;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+  .container-custom {
+    @apply max-w-5xl mx-auto;
+  }
+  .bw-card {
+    @apply bg-bw-black border border-bw-white rounded-md shadow-bw p-6;
+  }
+  .bw-link {
+    @apply text-bw-white border-b-2 border-transparent hover:border-bw-accent hover:text-bw-accent transition-all duration-150;
+  }
+  
+  /* Enhanced button with glow effects */
+  .hero-button {
+    @apply group relative overflow-hidden px-8 py-3 bg-bw-black border-2 border-bw-white text-bw-white font-bold uppercase tracking-wider transition-all duration-300 hover:border-bw-accent hover:text-bw-accent focus:outline-none focus:ring-2 focus:ring-bw-accent rounded-md;
+  }
+  
+  .hero-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-bw-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Custom animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-up-delay-100 {
+    animation: fadeInUp 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-up-delay-200 {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-up-delay-300 {
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Smooth floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  
+  /* Ultra-smooth floating animation */
+  @keyframes float-smooth {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  
+  .animate-float-smooth {
+    animation: float-smooth 6s ease-in-out infinite;
+    will-change: transform;
+  }
+  
+  /* Enhanced Glow effects with slow build-up */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0,255,255,0.5);
+  }
+  
+  .text-glow-hover:hover {
+    text-shadow: 0 0 25px rgba(0,255,255,0.8);
+    transition: text-shadow 0.8s ease-in-out;
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
+  }
+  
+  .box-glow-hover:hover {
+    box-shadow: 0 0 30px rgba(0,255,255,0.7);
+    transition: box-shadow 0.8s ease-in-out;
+  }
+  
+  /* New enhanced glow classes */
+  .glow-hover {
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .glow-hover:hover {
+    box-shadow: 0 0 25px rgba(0,255,255,0.6);
+    text-shadow: 0 0 15px rgba(0,255,255,0.8);
+  }
+  
+  .glow-hover-pink:hover {
+    box-shadow: 0 0 25px rgba(255,0,204,0.6);
+    text-shadow: 0 0 15px rgba(255,0,204,0.8);
+  }
+  
+  .glow-hover-cyan:hover {
+    box-shadow: 0 0 25px rgba(0,255,255,0.6);
+    text-shadow: 0 0 15px rgba(0,255,255,0.8);
+  }
+  
+  /* Button glow effects */
+  .button-glow-hover {
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .button-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+  }
+  
+  .button-glow-hover-pink:hover {
+    box-shadow: 0 0 20px rgba(255,0,204,0.5);
+  }
+} 
